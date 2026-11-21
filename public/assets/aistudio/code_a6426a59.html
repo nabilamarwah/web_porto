@@ -1,0 +1,727 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nabila Marwah Az Zahra — Portfolio</title>
+<!-- Tailwind CSS v3 with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Archivo (Black/Extra Bold 900), DM Sans, & Kaushan Script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;0,800;0,900;1,900&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Kaushan+Script&amp;display=swap" rel="stylesheet">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FBF8EE',
+            'cream-tint': '#F3EEDC',
+            ink: '#0E0E0E',
+            'vibrant-yellow': '#FFE81F',
+            'electric-blue': '#2F5BEA',
+            'soft-grey': '#E2DFD8',
+            'card-grey': '#C9C6BF'
+          },
+          fontFamily: {
+            display: ['Archivo', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            script: ['"Kaushan Script"', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specialized Canva aesthetic elements -->
+<style data-purpose="custom-typography">
+    .font-heavy {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+    
+    /* Slit letter slice effect for display headers */
+    .slit-slash {
+      position: relative;
+      display: inline-block;
+    }
+    .slit-slash::after {
+      content: '';
+      position: absolute;
+      top: 52%;
+      left: -8%;
+      width: 116%;
+      height: 4.5px;
+      background-color: #FBF8EE;
+      transform: rotate(-18deg);
+      pointer-events: none;
+      border-radius: 9999px;
+    }
+
+    /* Slit slash on dark background */
+    .slit-slash-dark::after {
+      background-color: #0E0E0E;
+    }
+
+    /* Flip glyph rotation (180deg) */
+    .flip-letter {
+      display: inline-block;
+      transform: rotate(180deg);
+      line-height: 0.9;
+    }
+  </style>
+<style data-purpose="road-band-styling">
+    /* Road marking dashed borders */
+    .road-band {
+      background-color: #0E0E0E;
+      position: relative;
+    }
+    .road-band::before,
+    .road-band::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        #FFFFFF,
+        #FFFFFF 24px,
+        transparent 24px,
+        transparent 44px
+      );
+      pointer-events: none;
+    }
+    .road-band::before {
+      top: 10px;
+    }
+    .road-band::after {
+      bottom: 10px;
+    }
+
+    /* Infinite marquee animation */
+    @keyframes marqueeScroll {
+      from { transform: translateX(0%); }
+      to { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marqueeScroll 24s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+<style data-purpose="hand-drawn-elements">
+    /* Hand drawn oval shape for highlights */
+    .drawn-oval-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .drawn-oval-wrap svg {
+      position: absolute;
+      width: 120%;
+      height: 155%;
+      top: -28%;
+      left: -10%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-cream text-ink font-body selection:bg-vibrant-yellow selection:text-ink antialiased overflow-x-hidden min-h-screen">
+<!-- BEGIN: StickyNavbar -->
+<header class="sticky top-0 z-50 bg-ink text-white border-b border-neutral-800 shadow-md">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+<!-- Left / Logo -->
+<a class="font-display font-black text-xl tracking-tighter text-white hover:text-vibrant-yellow transition-colors duration-150" href="#">
+        NABILA<span class="text-vibrant-yellow">.</span>
+</a>
+<!-- Desktop Navigation links -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-8 text-xs font-display font-bold tracking-widest uppercase">
+<a class="text-neutral-200 hover:text-vibrant-yellow transition-colors py-1 border-b-2 border-transparent hover:border-vibrant-yellow" href="#about">TENTANG</a>
+<a class="text-neutral-200 hover:text-vibrant-yellow transition-colors py-1 border-b-2 border-transparent hover:border-vibrant-yellow" href="#experience">PENGALAMAN</a>
+<a class="text-neutral-200 hover:text-vibrant-yellow transition-colors py-1 border-b-2 border-transparent hover:border-vibrant-yellow" href="#skills">KEAHLIAN</a>
+<a class="text-neutral-200 hover:text-vibrant-yellow transition-colors py-1 border-b-2 border-transparent hover:border-vibrant-yellow" href="#contact">KONTAK</a>
+</nav>
+<!-- Quick Action Pill -->
+<div>
+<a class="inline-flex items-center text-xs font-display font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-vibrant-yellow text-ink hover:bg-yellow-300 transition-transform active:scale-95" href="#contact">
+          HUBUNGI
+        </a>
+</div>
+</div>
+</header>
+<!-- END: StickyNavbar -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-16 lg:pt-14 lg:pb-20" data-purpose="hero-section">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Left Column: Giant Editorial Typography & Roles -->
+<div class="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
+<!-- Small kicker label -->
+<div class="inline-flex items-center gap-2 mb-3">
+<span class="w-2.5 h-2.5 rounded-full bg-vibrant-yellow border border-ink"></span>
+<span class="text-xs uppercase font-display font-bold tracking-widest text-neutral-600">PORTFOLIO SISWI BERPRESTASI</span>
+</div>
+<!-- Editorial Name Display with Slit/Slash Letters -->
+<h1 class="text-5xl sm:text-7xl xl:text-8xl font-heavy uppercase leading-[0.88] text-ink tracking-tight mb-6">
+<span>N<span class="slit-slash">A</span>BIL<span class="slit-slash">A</span></span><br>
+<span>M<span class="slit-slash">A</span>RW<span class="slit-slash">A</span>H</span><br>
+<span class="text-ink">AZ Z<span class="slit-slash">A</span>HR<span class="slit-slash">A</span></span>
+</h1>
+<!-- Role Toggle Interactive Pill -->
+<div class="mb-8 flex items-center gap-3">
+<div class="cursor-pointer select-none inline-flex items-center gap-2 px-5 py-2 rounded-full bg-vibrant-yellow border-2 border-ink shadow-[3px_3px_0px_#0E0E0E] hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-xs font-heavy uppercase tracking-wider" id="roleToggleBadge" role="button" tabindex="0" title="Klik untuk ganti peran">
+<span id="roleBadgeText">SEKRETARIS OSIS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-ink animate-ping"></span>
+</div>
+<span class="text-[11px] font-medium text-neutral-500 italic">(Klik untuk switch status)</span>
+</div>
+<!-- Core Competency Horizontal Pills -->
+<div class="pt-6 border-t border-neutral-300">
+<p class="text-xs font-display font-black uppercase text-neutral-500 tracking-wider mb-2">Fokus Utama</p>
+<div class="flex flex-wrap items-center gap-2 text-xs font-medium text-ink">
+<span class="bg-white px-3 py-1.5 rounded-full border border-neutral-300 shadow-sm">Manajemen Waktu</span>
+<span class="text-neutral-400 font-bold">•</span>
+<span class="bg-white px-3 py-1.5 rounded-full border border-neutral-300 shadow-sm">Komunikasi Efektif</span>
+<span class="text-neutral-400 font-bold">•</span>
+<span class="bg-white px-3 py-1.5 rounded-full border border-neutral-300 shadow-sm">Kerja Sama Tim</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Photo Frame with Stickers -->
+<div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+<div class="relative w-full max-w-[340px] sm:max-w-[380px]">
+<!-- Backdrop offset shadow block -->
+<div class="absolute inset-0 bg-ink rounded-[40px] translate-x-3 translate-y-3.5 -z-10"></div>
+<!-- Main Rounded Photo Card Container -->
+<div class="relative rounded-[38px] overflow-hidden border-2 border-ink bg-electric-blue aspect-[4/5] shadow-xl group">
+<!-- Provided Student Profile Photo -->
+<img alt="Friendly Indonesian high school girl smiling, wearing smart casual/school blazer, clean studio lighting, portrait photography, isolated on clean solid background, modern student profile avatar" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW1xGPNtN-7HIsyY6bPQwGdVihI3upGagY5Cmgy1gGwFv8NdwVXEjgurRTyx5viDFwTngpyTQHm9y-uSLvFxT54l7B313QKc-fAZ0H3Sec2qc_fDCd52he7nrdlFY-cU2qQgRTmdnWjY_b1Ujhpdm8LOEmZSH7kWzG3eRun4w4XtXQ_4WEu0hLilrq2XYnqY2ODGw49l_i0pWNXjKmhE6uoFhZQwDRgGrPyw71r04">
+<!-- Sticker: Interactive Heart Reaction Button -->
+<button aria-label="Suka profil Nabila" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-ink text-white flex items-center justify-center border-2 border-white shadow-md hover:scale-110 active:scale-95 transition-all z-20 cursor-pointer" id="heroHeartBtn" type="button">
+<svg class="w-5 h-5 fill-white transition-colors" id="heroHeartIcon" viewBox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</button>
+<!-- Sticker: Bottom Left Pill Badge -->
+<div class="absolute bottom-4 left-4 bg-ink/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full border border-white/20 text-[11px] font-display font-bold flex items-center gap-1.5 shadow-lg">
+<span class="w-2 h-2 rounded-full bg-vibrant-yellow"></span>
+<span>SMA Negeri 1 Jayapura</span>
+</div>
+</div>
+<!-- Slide Indicator Dots below photo -->
+<div class="flex justify-center items-center gap-2 mt-4">
+<span class="w-6 h-2 rounded-full bg-ink"></span>
+<span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+<span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: RoadMarkingMarqueeBand -->
+<!-- Black highway band with dual white dashed stripes and dynamic ticker text -->
+<section aria-label="Ticker Pengumuman" class="road-band py-8 overflow-hidden border-y-2 border-ink">
+<div class="animate-marquee whitespace-nowrap text-white font-display text-base sm:text-lg font-bold uppercase tracking-wider flex items-center">
+<span class="inline-flex items-center gap-4 px-4">
+<span class="text-vibrant-yellow font-script normal-case text-2xl">✦</span>
+<span>SEKRETARIS OSIS</span>
+<span class="text-vibrant-yellow">✦</span>
+<span class="text-vibrant-yellow font-script normal-case text-2xl">membaca buku</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>PELAJAR AKTIF</span>
+<span class="text-vibrant-yellow">✦</span>
+<span class="text-vibrant-yellow font-script normal-case text-2xl">mendesain</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>KEGIATAN SOSIAL &amp; PENDIDIKAN</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>SMA NEGERI 1 JAYAPURA</span>
+</span>
+<!-- Duplicated for seamless loop -->
+<span class="inline-flex items-center gap-4 px-4">
+<span class="text-vibrant-yellow font-script normal-case text-2xl">✦</span>
+<span>SEKRETARIS OSIS</span>
+<span class="text-vibrant-yellow">✦</span>
+<span class="text-vibrant-yellow font-script normal-case text-2xl">membaca buku</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>PELAJAR AKTIF</span>
+<span class="text-vibrant-yellow">✦</span>
+<span class="text-vibrant-yellow font-script normal-case text-2xl">mendesain</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>KEGIATAN SOSIAL &amp; PENDIDIKAN</span>
+<span class="text-vibrant-yellow">✦</span>
+<span>SMA NEGERI 1 JAYAPURA</span>
+</span>
+</div>
+</section>
+<!-- END: RoadMarkingMarqueeBand -->
+<!-- BEGIN: PerkenalanSection (My Introduction) -->
+<section class="py-20 max-w-6xl mx-auto px-4 sm:px-6" data-purpose="introduction-section" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left: Stacked Headline & Dark Intro Card -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="mb-4">
+<span class="text-xs uppercase font-display font-black tracking-widest text-neutral-500 bg-neutral-200 px-3 py-1 rounded-full">
+              MY INTRODUCTION
+            </span>
+</div>
+<!-- Bold 3-tier cut headline -->
+<h2 class="text-5xl sm:text-6xl md:text-7xl font-heavy uppercase leading-[0.9] tracking-tighter text-ink mb-8">
+<span>PERKE-</span><br>
+<span>N<span class="slit-slash">A</span>L<span class="slit-slash">A</span>N</span><br>
+<span>DIRI</span>
+</h2>
+<!-- Dark rounded container card matching template layout -->
+<div class="bg-ink text-white p-7 sm:p-9 rounded-[32px] border-2 border-ink shadow-[6px_6px_0px_#FFE81F] relative">
+<div class="absolute -top-3 left-8 bg-vibrant-yellow text-ink text-[11px] font-display font-black px-3 py-0.5 rounded-full uppercase tracking-wider">
+              Halo!
+            </div>
+<p class="text-base sm:text-lg font-body leading-relaxed text-neutral-200">
+              Hai, Nabila di sini! Aku <strong class="text-white font-bold underline decoration-vibrant-yellow decoration-2 underline-offset-4">Nabila Marwah Az Zahra</strong>. 
+              Siswi SMA Negeri 1 Jayapura yang komunikatif, bertanggung jawab, dan memiliki antusiasme tinggi dalam kegiatan sosial serta kepemimpinan pendidikan.
+            </p>
+<div class="mt-6 pt-5 border-t border-neutral-800 flex flex-wrap items-center justify-between text-xs text-neutral-400">
+<span class="flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span> Siap Berkolaborasi
+              </span>
+<span class="font-display font-bold text-neutral-300">Jayapura, Papua 🇮🇩</span>
+</div>
+</div>
+</div>
+<!-- Right: Portrait Frame with Overlapping Badges/Stickers -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative w-full max-w-[340px]">
+<!-- Corner Sticker: Black "•••" Pill -->
+<div class="absolute -top-3 -left-3 z-20 bg-ink text-white px-3.5 py-1.5 rounded-full border-2 border-white shadow-md flex items-center space-x-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+</div>
+<!-- Portrait Image Wrapper with Smooth Rounded Frame (36px) -->
+<div class="rounded-[36px] overflow-hidden border-2 border-ink bg-neutral-100 aspect-[4/5] shadow-xl relative group">
+<img alt="Friendly Indonesian high school girl smiling, wearing smart casual/school blazer, clean studio lighting, portrait photography, isolated on clean solid background, modern student profile avatar" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl6uakCIm1d9-1WudgPNK9F42yNqUH_NZ4krRy0Hgcp3jtQqP67Rn4lIzcizL2ma4DMfswaG1GbD45I7h02uRXI1wXmRJHthINWoeXF-25M8LVJ5QyIcfC6-GSgf2uo40dRGUvA3sd4jpr8ssW1X13S_J0Kp5LEGB64QQi3NxJDGY8ald90ODVXFX5x9gfxYEHeyayiFd2ew5dORfon5cV-4KRakBLXtXr4YmPqGC_rIc6F99X7aJi">
+</div>
+<!-- Corner Sticker: Yellow Thumbs-Up Badge with interactive click bounce -->
+<button aria-label="Thumbs up badge" class="absolute -bottom-3 -right-3 z-20 w-14 h-14 bg-vibrant-yellow rounded-2xl border-2 border-ink shadow-[3px_3px_0px_#0E0E0E] flex items-center justify-center text-ink hover:rotate-6 active:scale-90 transition-transform cursor-pointer" id="thumbsUpBadge" type="button">
+<svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+<path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8v-.08c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.77-.66-1.24-.47l-3.23 1.29c-.54.21-.87.73-.87 1.3v8.59c0 .77.62 1.4 1.4 1.4h7.03c.69 0 1.28-.47 1.43-1.14l1.97-8.78z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PerkenalanSection -->
+<!-- BEGIN: TentangAkuSection (About Me) -->
+<section class="py-16 bg-[#F3EEDC]/60 border-t border-neutral-300" data-purpose="about-me-section">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<!-- Center Giant Headline: TENTANG AKU with flipped 'U' -->
+<div class="text-center mb-10">
+<h2 class="text-5xl sm:text-7xl lg:text-8xl font-heavy uppercase tracking-tight text-ink">
+            TENTANG AK<span class="flip-letter text-ink">U</span>
+</h2>
+</div>
+<!-- Middle narrative row with hand-drawn blue oval -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center max-w-4xl mx-auto mb-14">
+<!-- Left: Blue Hand-Drawn Oval Script -->
+<div class="md:col-span-4 flex justify-center md:justify-end">
+<div class="drawn-oval-wrap py-2 px-6">
+<!-- SVG Handwritten Loop -->
+<svg fill="none" viewBox="0 0 160 70" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 35C15 15 45 6 85 6C130 6 155 18 152 35C148 54 110 65 72 63C32 61 7 50 12 33C14 26 25 18 42 14" stroke="#2F5BEA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></path>
+</svg>
+<span class="font-script text-2xl sm:text-3xl text-electric-blue relative z-10 -rotate-3 select-none">
+                ini aku!
+              </span>
+</div>
+</div>
+<!-- Right: Narrative statement -->
+<div class="md:col-span-8">
+<p class="text-base sm:text-lg text-neutral-800 font-medium leading-relaxed border-l-2 border-ink pl-5">
+              Memiliki kemauan tinggi untuk berbagi ilmu, belajar dari pengalaman langsung di lapangan, serta berkontribusi aktif dalam menciptakan lingkungan belajar yang positif, suportif, dan interaktif.
+            </p>
+<div class="mt-2 pl-5 text-xs font-display font-black tracking-wider text-neutral-500 uppercase">
+              📍 Berdomisili di Jayapura, Papua
+            </div>
+</div>
+</div>
+<!-- 3 Playful Angled Interest / Hobby Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+<!-- Tile 1: Membaca Buku (Rotated -3deg) -->
+<div class="bg-white p-6 rounded-[28px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transform sm:-rotate-3 hover:rotate-0 transition-transform duration-300">
+<div class="w-12 h-12 rounded-2xl bg-vibrant-yellow border-2 border-ink flex items-center justify-center text-2xl mb-4 shadow-sm">
+              📚
+            </div>
+<h3 class="font-display font-black text-lg text-ink uppercase tracking-tight">Membaca Buku</h3>
+<p class="text-xs text-neutral-600 mt-2 font-medium leading-relaxed">
+              Memperluas wawasan literasi, psikologi komunikasi, serta buku pengembangan karakter diri.
+            </p>
+</div>
+<!-- Tile 2: Mendesain (Rotated 3deg) -->
+<div class="bg-white p-6 rounded-[28px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transform sm:rotate-3 hover:rotate-0 transition-transform duration-300">
+<div class="w-12 h-12 rounded-2xl bg-electric-blue text-white border-2 border-ink flex items-center justify-center text-2xl mb-4 shadow-sm">
+              🎨
+            </div>
+<h3 class="font-display font-black text-lg text-ink uppercase tracking-tight">Mendesain</h3>
+<p class="text-xs text-neutral-600 mt-2 font-medium leading-relaxed">
+              Kreativitas visual digital untuk publikasi materi edukasi, pamflet acara, dan media OSIS.
+            </p>
+</div>
+<!-- Tile 3: Menonton Film (Rotated -2deg) -->
+<div class="bg-white p-6 rounded-[28px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transform sm:-rotate-2 hover:rotate-0 transition-transform duration-300">
+<div class="w-12 h-12 rounded-2xl bg-vibrant-yellow border-2 border-ink flex items-center justify-center text-2xl mb-4 shadow-sm">
+              🎬
+            </div>
+<h3 class="font-display font-black text-lg text-ink uppercase tracking-tight">Menonton Film</h3>
+<p class="text-xs text-neutral-600 mt-2 font-medium leading-relaxed">
+              Mengamati storytelling, perspektif sosial kultural baru, dan ekspresi sinematik inspiratif.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TentangAkuSection -->
+<!-- BEGIN: PengalamanSection (Experience & Education) -->
+<!-- Road-band themed dark container with dashed boundaries -->
+<section class="road-band py-20 text-white relative" data-purpose="experience-section" id="experience">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-14">
+<p class="text-xs font-display font-bold uppercase tracking-widest text-vibrant-yellow mb-2">
+            ORGANISASI, KEPANITIAAN &amp; SEKOLAH
+          </p>
+<h2 class="text-4xl sm:text-6xl font-heavy uppercase tracking-tight leading-tight">
+<span class="text-vibrant-yellow">PENGALAMAN</span> &amp; PENDIDIKAN
+          </h2>
+<p class="text-neutral-400 text-sm mt-3 font-medium">
+            Jejak langkah kontribusi aktif dalam kepemimpinan siswa dan dedikasi akademis formal.
+          </p>
+</div>
+<!-- 3 Feature Experience Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- Card 1: Highlighted Yellow Card (OSIS Sekretaris I) -->
+<div class="bg-vibrant-yellow text-ink p-7 rounded-[32px] border-2 border-white shadow-[6px_6px_0px_#FFFFFF] flex flex-col justify-between transform hover:-translate-y-1.5 transition-transform duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-display font-black uppercase tracking-wider bg-ink text-white px-3 py-1 rounded-full">
+                  2025 — 2026
+                </span>
+<span class="text-xs font-bold uppercase">Aktif</span>
+</div>
+<h3 class="font-display font-black text-2xl uppercase tracking-tight leading-tight mb-2">
+                OSIS SMA Negeri 1 Jayapura
+              </h3>
+<div class="inline-block bg-ink text-white text-xs font-display font-bold px-3 py-1 rounded-full mb-4">
+                Sekretaris I
+              </div>
+<p class="text-xs sm:text-sm font-medium leading-relaxed text-neutral-900">
+                Mengelola tertib administrasi, surat-menyurat resmi, notulensi rapat, serta koordinasi dokumentasi kegiatan OSIS bersama jajaran pengurus utama.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-ink/20 flex items-center justify-between text-xs font-bold">
+<span>SMA N 1 JAYAPURA</span>
+<span>★★★★★</span>
+</div>
+</div>
+<!-- Card 2: White Card (Panitia Natal Sekolah) -->
+<div class="bg-white text-ink p-7 rounded-[32px] border-2 border-neutral-300 shadow-[6px_6px_0px_#FFE81F] flex flex-col justify-between transform hover:-translate-y-1.5 transition-transform duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-display font-black uppercase tracking-wider bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full border border-neutral-300">
+                  2025 — 2026
+                </span>
+<span class="text-xs font-bold text-neutral-500 uppercase">Kepanitiaan</span>
+</div>
+<h3 class="font-display font-black text-2xl uppercase tracking-tight leading-tight mb-2">
+                Panitia Kegiatan Natal Sekolah
+              </h3>
+<div class="inline-block bg-ink text-white text-xs font-display font-bold px-3 py-1 rounded-full mb-4">
+                Sekretaris Panitia
+              </div>
+<p class="text-xs sm:text-sm text-neutral-700 font-medium leading-relaxed">
+                Menangani koordinasi menyeluruh kepanitiaan, penyusunan proposal perizinan, dan pengarsipan agenda peringatan hari besar sekolah.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between text-xs font-bold text-neutral-500">
+<span>SMA N 1 JAYAPURA</span>
+<span>KEPANITIAAN</span>
+</div>
+</div>
+<!-- Card 3: White Card (Anggota PDD OSIS) -->
+<div class="bg-white text-ink p-7 rounded-[32px] border-2 border-neutral-300 shadow-[6px_6px_0px_#2F5BEA] flex flex-col justify-between transform hover:-translate-y-1.5 transition-transform duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-display font-black uppercase tracking-wider bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full border border-neutral-300">
+                  2024 — 2025
+                </span>
+<span class="text-xs font-bold text-neutral-500 uppercase">OSIS</span>
+</div>
+<h3 class="font-display font-black text-2xl uppercase tracking-tight leading-tight mb-2">
+                OSIS SMA Negeri 1 Jayapura
+              </h3>
+<div class="inline-block bg-ink text-white text-xs font-display font-bold px-3 py-1 rounded-full mb-4">
+                Anggota PDD
+              </div>
+<p class="text-xs sm:text-sm text-neutral-700 font-medium leading-relaxed">
+                Mendukung keberhasilan eksekusi seluruh program kerja OSIS sebagai anggota tim Publikasi, Dekorasi, dan Dokumentasi visual.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between text-xs font-bold text-neutral-500">
+<span>SMA N 1 JAYAPURA</span>
+<span>DOKUMENTASI</span>
+</div>
+</div>
+</div>
+<!-- Riwayat Pendidikan Chips (Numbered Chips Row) -->
+<div class="border-t border-neutral-800 pt-10">
+<p class="text-xs font-display font-bold tracking-widest text-neutral-400 uppercase text-center mb-6">
+            RIWAYAT PENDIDIKAN FORMAL
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-neutral-900 border border-neutral-700 p-4 rounded-2xl flex items-center gap-4 hover:border-vibrant-yellow transition-colors">
+<span class="text-2xl font-display font-black text-vibrant-yellow">01</span>
+<div>
+<p class="font-display font-bold text-sm text-white">SMA Negeri 1 Jayapura</p>
+<p class="text-xs text-neutral-400">Sekretaris I OSIS · Anggota PDD</p>
+</div>
+</div>
+<div class="bg-neutral-900 border border-neutral-700 p-4 rounded-2xl flex items-center gap-4 hover:border-vibrant-yellow transition-colors">
+<span class="text-2xl font-display font-black text-neutral-400">02</span>
+<div>
+<p class="font-display font-bold text-sm text-white">MTs Al-Muttaqin Jayapura</p>
+<p class="text-xs text-neutral-400">Pendidikan Menengah Pertama</p>
+</div>
+</div>
+<div class="bg-neutral-900 border border-neutral-700 p-4 rounded-2xl flex items-center gap-4 hover:border-vibrant-yellow transition-colors">
+<span class="text-2xl font-display font-black text-neutral-400">03</span>
+<div>
+<p class="font-display font-bold text-sm text-white">SD Pembangunan V Yapis</p>
+<p class="text-xs text-neutral-400">Pendidikan Dasar</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PengalamanSection -->
+<!-- BEGIN: KeahlianSection (Skills - "Work Process" Grid Style) -->
+<section class="py-20 max-w-6xl mx-auto px-4 sm:px-6" data-purpose="skills-section" id="skills">
+<!-- Headline & hand drawn oval subtitle -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-14 border-b border-neutral-300 pb-8">
+<div>
+<span class="text-xs uppercase font-display font-black tracking-widest text-neutral-500">KOMPETENSI &amp; KEAHLIAN</span>
+<h2 class="text-4xl sm:text-6xl font-heavy uppercase tracking-tight text-ink mt-1">
+            KEAHLIAN-KU
+          </h2>
+</div>
+<!-- Hand drawn blue oval: banyak peran, satu orang -->
+<div class="drawn-oval-wrap py-2 px-6">
+<svg fill="none" viewBox="0 0 160 70" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 35C10 18 42 7 82 7C125 7 152 16 150 34C147 52 112 63 76 62C38 61 9 52 11 36C12 28 22 20 38 15" stroke="#2F5BEA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></path>
+</svg>
+<span class="font-script text-xl sm:text-2xl text-electric-blue relative z-10 rotate-1 select-none">
+            banyak peran, satu orang
+          </span>
+</div>
+</div>
+<!-- Numbered Process Tiles (01, 02, 03, 04) which shift to yellow on hover -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Tile 01 -->
+<div class="bg-card-grey/30 hover:bg-vibrant-yellow p-6 rounded-[30px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transition-all duration-300 group cursor-default">
+<div class="w-14 h-14 rounded-2xl bg-ink text-white group-hover:bg-ink group-hover:text-vibrant-yellow flex items-center justify-center font-display font-black text-2xl mb-6 shadow-sm transition-colors">
+            01
+          </div>
+<h3 class="font-display font-black text-xl uppercase tracking-tight mb-2 text-ink">
+            Manajemen Waktu
+          </h3>
+<p class="text-xs sm:text-sm text-neutral-700 group-hover:text-ink font-medium leading-relaxed">
+            Mampu menyeimbangkan antara tanggung jawab akademik sekolah, agenda rutin OSIS, dan komitmen ekstrakurikuler.
+          </p>
+</div>
+<!-- Tile 02 -->
+<div class="bg-card-grey/30 hover:bg-vibrant-yellow p-6 rounded-[30px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transition-all duration-300 group cursor-default">
+<div class="w-14 h-14 rounded-2xl bg-ink text-white group-hover:bg-ink group-hover:text-vibrant-yellow flex items-center justify-center font-display font-black text-2xl mb-6 shadow-sm transition-colors">
+            02
+          </div>
+<h3 class="font-display font-black text-xl uppercase tracking-tight mb-2 text-ink">
+            Komunikasi Efektif
+          </h3>
+<p class="text-xs sm:text-sm text-neutral-700 group-hover:text-ink font-medium leading-relaxed">
+            Menyampaikan gagasan, berkoordinasi dengan guru dan pengurus, serta memfasilitasi dialog konstruktif antar siswa.
+          </p>
+</div>
+<!-- Tile 03 -->
+<div class="bg-card-grey/30 hover:bg-vibrant-yellow p-6 rounded-[30px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transition-all duration-300 group cursor-default">
+<div class="w-14 h-14 rounded-2xl bg-ink text-white group-hover:bg-ink group-hover:text-vibrant-yellow flex items-center justify-center font-display font-black text-2xl mb-6 shadow-sm transition-colors">
+            03
+          </div>
+<h3 class="font-display font-black text-xl uppercase tracking-tight mb-2 text-ink">
+            Kerja Sama Tim
+          </h3>
+<p class="text-xs sm:text-sm text-neutral-700 group-hover:text-ink font-medium leading-relaxed">
+            Solid dalam kepanitiaan, adaptif pada situasi darurat, dan menghargai sinergi ragam sudut pandang rekan sekerja.
+          </p>
+</div>
+<!-- Tile 04 -->
+<div class="bg-card-grey/30 hover:bg-vibrant-yellow p-6 rounded-[30px] border-2 border-ink shadow-[4px_4px_0px_#0E0E0E] transition-all duration-300 group cursor-default">
+<div class="w-14 h-14 rounded-2xl bg-ink text-white group-hover:bg-ink group-hover:text-vibrant-yellow flex items-center justify-center font-display font-black text-2xl mb-6 shadow-sm transition-colors">
+            04
+          </div>
+<h3 class="font-display font-black text-xl uppercase tracking-tight mb-2 text-ink">
+            Kepemimpinan Dasar
+          </h3>
+<p class="text-xs sm:text-sm text-neutral-700 group-hover:text-ink font-medium leading-relaxed">
+            Peka dalam mengarahkan pelaksanaan kegiatan, mengayomi anggota panitia, dan sigap mengambil keputusan solutif.
+          </p>
+</div>
+</div>
+<!-- Hard Skills & Practical Tools Badges -->
+<div class="bg-white p-7 rounded-[32px] border-2 border-ink shadow-[5px_5px_0px_#0E0E0E] flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h4 class="font-display font-black uppercase text-base text-ink tracking-tight">Keahlian Praktis &amp; Administratif</h4>
+<p class="text-xs text-neutral-600">Instrumen pendukung kerja operasional organisasi</p>
+</div>
+<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+<span class="px-4 py-2 rounded-full bg-vibrant-yellow border-2 border-ink text-xs font-display font-black uppercase tracking-wider shadow-sm hover:scale-105 transition-transform cursor-default">
+            ✍️ Kesekretariatan
+          </span>
+<span class="px-4 py-2 rounded-full bg-vibrant-yellow border-2 border-ink text-xs font-display font-black uppercase tracking-wider shadow-sm hover:scale-105 transition-transform cursor-default">
+            📁 Administrasi Organisasi
+          </span>
+<span class="px-4 py-2 rounded-full bg-vibrant-yellow border-2 border-ink text-xs font-display font-black uppercase tracking-wider shadow-sm hover:scale-105 transition-transform cursor-default">
+            🎨 Mendesain (Canva &amp; Visual)
+          </span>
+</div>
+</div>
+</section>
+<!-- END: KeahlianSection -->
+<!-- BEGIN: KontakSection & Footer (Road Band Wrap) -->
+<section class="road-band pt-20 pb-12 text-white relative" data-purpose="contact-and-footer" id="contact">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+<!-- Contact Headline -->
+<div class="text-center max-w-2xl mx-auto mb-14">
+<p class="text-xs font-display font-bold uppercase tracking-widest text-neutral-400 mb-2">
+            SAPA AKU, KOLABORASI, ATAU NGOBROL SANTAI
+          </p>
+<h2 class="text-5xl sm:text-7xl font-heavy uppercase tracking-tight leading-tight">
+            AYO <span class="text-vibrant-yellow">TERHUBUNG</span>
+</h2>
+<p class="text-neutral-400 text-sm mt-3 font-medium">
+            Terbuka untuk diskusi proyek OSIS, kolaborasi kepemudaan, maupun program pertukaran ide antarsekolah.
+          </p>
+</div>
+<!-- 3 Interactive White Contact Action Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- Card 1: WhatsApp -->
+<a class="bg-white text-ink p-6 rounded-[28px] border-2 border-neutral-300 shadow-[6px_6px_0px_#FFE81F] flex items-center gap-4 hover:-translate-y-1 hover:border-ink transition-all group" href="https://wa.me/6281247092634" rel="noopener noreferrer" target="_blank">
+<div class="w-14 h-14 rounded-2xl bg-vibrant-yellow border-2 border-ink flex items-center justify-center flex-shrink-0 group-hover:rotate-6 transition-transform">
+<!-- WhatsApp SVG -->
+<svg class="w-7 h-7 fill-ink" viewBox="0 0 24 24">
+<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.94 7.44 8.68 7.5 8.46 7.74C8.24 7.97 7.62 8.56 7.62 9.76C7.62 10.96 8.5 12.12 8.62 12.28C8.75 12.44 10.35 14.91 12.8 15.97C13.38 16.22 13.84 16.38 14.19 16.49C14.78 16.68 15.31 16.65 15.73 16.59C16.2 16.51 17.18 15.99 17.38 15.42C17.59 14.86 17.59 14.37 17.53 14.28C17.47 14.18 17.3 14.12 17.05 14C16.8 13.87 15.55 13.26 15.32 13.17C15.09 13.09 14.92 13.05 14.75 13.3C14.58 13.54 14.11 14.12 13.96 14.28C13.82 14.45 13.67 14.47 13.42 14.35C13.17 14.22 12.38 13.96 11.44 13.12C10.71 12.47 10.22 11.66 10.08 11.41C9.93 11.17 10.06 11.03 10.19 10.91C10.3 10.8 10.44 10.62 10.57 10.47C10.7 10.32 10.74 10.21 10.83 10.05C10.91 9.88 10.87 9.74 10.81 9.61C10.74 9.5 10.27 8.35 10.07 7.89C9.89 7.42 9.7 7.49 9.55 7.48C9.42 7.47 9.26 7.44 9.11 7.44Z"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs uppercase font-display font-black text-neutral-500 tracking-wider">WhatsApp</p>
+<p class="font-display font-bold text-base text-ink group-hover:text-electric-blue transition-colors">+62 812-4709-2634</p>
+</div>
+</a>
+<!-- Card 2: Email -->
+<a class="bg-white text-ink p-6 rounded-[28px] border-2 border-neutral-300 shadow-[6px_6px_0px_#FFE81F] flex items-center gap-4 hover:-translate-y-1 hover:border-ink transition-all group" href="mailto:marwahzzahra@gmail.com">
+<div class="w-14 h-14 rounded-2xl bg-vibrant-yellow border-2 border-ink flex items-center justify-center flex-shrink-0 group-hover:rotate-6 transition-transform">
+<!-- Mail SVG -->
+<svg class="w-7 h-7 fill-ink" viewBox="0 0 24 24">
+<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+</svg>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs uppercase font-display font-black text-neutral-500 tracking-wider">Email Resmi</p>
+<p class="font-display font-bold text-base text-ink truncate group-hover:text-electric-blue transition-colors">marwahzzahra@gmail.com</p>
+</div>
+</a>
+<!-- Card 3: Instagram -->
+<a class="bg-white text-ink p-6 rounded-[28px] border-2 border-neutral-300 shadow-[6px_6px_0px_#FFE81F] flex items-center gap-4 hover:-translate-y-1 hover:border-ink transition-all group" href="https://instagram.com/nm.zraa" rel="noopener noreferrer" target="_blank">
+<div class="w-14 h-14 rounded-2xl bg-vibrant-yellow border-2 border-ink flex items-center justify-center flex-shrink-0 group-hover:rotate-6 transition-transform">
+<!-- Instagram SVG -->
+<svg class="w-7 h-7 fill-ink" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs uppercase font-display font-black text-neutral-500 tracking-wider">Instagram</p>
+<p class="font-display font-bold text-base text-ink group-hover:text-electric-blue transition-colors">@nm.zraa</p>
+</div>
+</a>
+</div>
+<!-- Semantic Sub-footer -->
+<footer class="pt-8 border-t border-neutral-800 text-center sm:flex sm:items-center sm:justify-between text-xs text-neutral-400">
+<p>© 2026 Nabila Marwah Az Zahra · Hak Cipta Dilindungi.</p>
+<div class="mt-4 sm:mt-0 flex items-center justify-center gap-2 font-display uppercase tracking-widest text-[11px] text-neutral-300">
+<span>✸ Pelajar</span>
+<span>•</span>
+<span>OSIS</span>
+<span>•</span>
+<span>Sekretaris SMA Negeri 1 Jayapura</span>
+</div>
+</footer>
+</div>
+</section>
+<!-- END: KontakSection -->
+</main>
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="portfolio-interactions">
+    // Interactive 1: Toggle Heart Button Reaction
+    const heartBtn = document.getElementById('heroHeartBtn');
+    const heartIcon = document.getElementById('heroHeartIcon');
+    let isHeartActive = false;
+
+    if (heartBtn && heartIcon) {
+      heartBtn.addEventListener('click', () => {
+        isHeartActive = !isHeartActive;
+        if (isHeartActive) {
+          heartIcon.setAttribute('class', 'w-5 h-5 fill-vibrant-yellow scale-125 transition-transform duration-200');
+          heartBtn.classList.add('border-vibrant-yellow');
+        } else {
+          heartIcon.setAttribute('class', 'w-5 h-5 fill-white scale-100 transition-transform duration-200');
+          heartBtn.classList.remove('border-vibrant-yellow');
+        }
+      });
+    }
+
+    // Interactive 2: Toggle Role Pill Button
+    const roleToggle = document.getElementById('roleToggleBadge');
+    const roleText = document.getElementById('roleBadgeText');
+    const roles = ['SEKRETARIS OSIS', 'PELAJAR AKTIF', 'KREATIF DESAIN'];
+    let roleIndex = 0;
+
+    if (roleToggle && roleText) {
+      roleToggle.addEventListener('click', () => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        roleText.textContent = roles[roleIndex];
+      });
+      // Accessible keydown
+      roleToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          roleToggle.click();
+        }
+      });
+    }
+
+    // Interactive 3: Playful Thumbs-Up Bounce Effect
+    const thumbsBtn = document.getElementById('thumbsUpBadge');
+    if (thumbsBtn) {
+      thumbsBtn.addEventListener('click', () => {
+        thumbsBtn.classList.add('scale-125', 'bg-white');
+        setTimeout(() => {
+          thumbsBtn.classList.remove('scale-125', 'bg-white');
+        }, 300);
+      });
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FBF8EE;
+  --color-cream-tint: #F3EEDC;
+  --color-ink: #0E0E0E;
+  --color-vibrant-yellow: #FFE81F;
+  --color-electric-blue: #2F5BEA;
+  --color-soft-grey: #E2DFD8;
+  --color-card-grey: #C9C6BF;
+
+  --font-display: "Archivo", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-script: "Kaushan Script", cursive;
+}
+
+.font-heavy {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+/* Slit letter slice effect for display headers */
+.slit-slash {
+  position: relative;
+  display: inline-block;
+}
+
+.slit-slash::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: -8%;
+  width: 116%;
+  height: 4.5px;
+  background-color: #FBF8EE;
+  transform: rotate(-18deg);
+  pointer-events: none;
+  border-radius: 9999px;
+}
+
+.slit-slash-dark::after {
+  background-color: #0E0E0E;
+}
+
+/* Flip glyph rotation (180deg) */
+.flip-letter {
+  display: inline-block;
+  transform: rotate(180deg);
+  line-height: 0.9;
+}
+
+/* Road marking dashed borders */
+.road-band {
+  background-color: #0E0E0E;
+  position: relative;
+}
+
+.road-band::before,
+.road-band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #FFFFFF,
+    #FFFFFF 24px,
+    transparent 24px,
+    transparent 44px
+  );
+  pointer-events: none;
+}
+
+.road-band::before {
+  top: 10px;
+}
+
+.road-band::after {
+  bottom: 10px;
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marqueeScroll 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+    width: auto;
+  }
+}
+
+/* Hand drawn oval shape for highlights */
+.drawn-oval-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawn-oval-wrap svg {
+  position: absolute;
+  width: 120%;
+  height: 155%;
+  top: -28%;
+  left: -10%;
+  pointer-events: none;
+}
